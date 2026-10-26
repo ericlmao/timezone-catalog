@@ -137,14 +137,31 @@ that all of a country observes that timezone.
 
 ## Deploy
 
-`npm run build` writes static assets into `dist/`. Upload that directory to any
-static host (Cloudflare Pages, Netlify, Vercel, or an internal web server).
-Relative asset paths support subdirectory hosting. No SPA rewrite is required:
-shareable state uses query parameters on the root page.
+The site is deployed to **https://timezonetool.ericlmao.com/** using GitHub Pages.
+The repository's Pages publishing source is **GitHub Actions**.
 
-The included GitHub Actions workflow tests and builds on every push and pull
-request. It uploads the production build as a private repository artifact;
-it does not publish a public website or enable GitHub Pages automatically.
+The included workflow tests and builds every push to `main` and every pull
+request. After all checks pass, pushes to `main` deploy `dist/` to the
+`github-pages` environment. Pull requests run checks without deploying. The
+workflow can also be started manually from the Actions tab.
+
+`public/CNAME` is copied to `dist/CNAME` by Vite. The custom domain is also
+configured in the repository's Pages settings; Actions deployments do not
+configure a domain from the CNAME file alone.
+
+The DNS provider must have this record:
+
+| Type | Name | Target |
+| --- | --- | --- |
+| CNAME | `timezonetool` | `ericlmao.github.io` |
+
+Enable **Enforce HTTPS** in Pages settings once GitHub issues the custom-domain
+certificate. DNS must resolve correctly before certificate issuance can finish.
+
+`npm run build` produces a static `dist/` directory that can also be served by
+other static hosts. Relative asset paths support custom-domain roots and GitHub
+Pages subdirectories. No SPA rewrite is required: shareable state uses query
+parameters on the root page.
 
 ## Design and stack
 
