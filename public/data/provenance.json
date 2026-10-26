@@ -1,0 +1,25 @@
+{
+  "generated": "2026-10-26T05:56:18.506Z",
+  "tzdb": "2026e",
+  "sources": [
+    {
+      "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "sha256": "a3d93a278c3428248db974cf563b6e360c9635ccaf96dfc581ddd27390df05d1"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+      "sha256": "2e4867f5397acb056ea26377601b57af37cb4c81399770225018e9e439e91ad3"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/countryInfo.txt",
+      "sha256": "c55f638cfaafb4fe45a9aa15120a0f1f78e8a34a8e1847d7b9320cf740fbc9ab"
+    }
+  ],
+  "geonamesLicense": "CC BY 4.0",
+  "naturalEarthLicense": "Public domain",
+  "geographicCoverage": "GeoNames cities15000, not a timezone boundary dataset"
+}
